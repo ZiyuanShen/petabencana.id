@@ -6,4 +6,9 @@ const Router = Ember.Router.extend({
   rootURL: config.rootURL
 });
 
+Ember.Router.map(function(){
+  this.route('about', { path: '/about'});
+  this.route('component/card-content', { path: '/report/:card_id'});
+});
+
 export default Router;
