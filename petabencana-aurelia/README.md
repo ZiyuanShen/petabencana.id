@@ -2,8 +2,7 @@
 
 Example template using the [Aurelia Framework](http://aurelia.io/)
 
-To get up and running...
-
+To get up and running:
 - Install Aurelia CLI: `npm install aurelia-cli -g`
 - Install the project dependencies: `npm install`
 - Start the development server: `npm start`
