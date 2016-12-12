@@ -1,5 +1,5 @@
 import {Data} from './data';
-let DATASERVER = 'https://data.petabencana.id/';
+let DATASERVER = 'http://localhost:8001/';
 import $ from 'jquery';
 
 // PetaBencana.id Layers class - manage leaflet data layers
@@ -51,7 +51,7 @@ export class Layers {
     });
   }
 
-  removeReports(){
+  removeReports() {
     if (this.reports) {
       this.map.removeLayer(this.reports);
     }

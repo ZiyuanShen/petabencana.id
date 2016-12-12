@@ -7,7 +7,7 @@ import {Reportcard} from 'Reportcard';
 export class Description {
   constructor(Reportcard) {
     this.reportcard = Reportcard;
-    var reportCardDescription = this.reportcard.getdescription();
+    var reportCardDescription = this.reportcard.getDescription();
     if (reportCardDescription) {
       this.descripText = reportCardDescription;
       this.textLength = this.descripText.length;
@@ -31,6 +31,6 @@ export class Description {
 
   storeInput() {
     this.textLength = this.descripText.length; //this.textLength required to update bound helpers for description.html
-    this.reportcard.setdescription(this.descripText);
+    this.reportcard.setDescription(this.descripText);
   }
 }

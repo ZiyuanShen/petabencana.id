@@ -17,43 +17,43 @@ export class Reportcard {
     this.description = null;
   }
 
-  getid() {
+  getId() {
     return this.id;
   }
 
-  getlocation() {
+  getLocation() {
     return this.location;
   }
 
-  getwaterdepth() {
+  getWaterDepth() {
     return this.water_depth;
   }
 
-  getphoto() {
+  getPhoto() {
     return this.photo;
   }
 
-  getdescription() {
+  getDescription() {
     return this.description;
   }
 
-  setid(id) {
+  setId(id) {
     this.id = id;
   }
 
-  setlocation(location) {
+  setLocation(location) {
     this.location = location;
   }
 
-  setwaterdepth(waterdepth) {
+  setWaterDepth(waterdepth) {
     this.water_depth = waterdepth;
   }
 
-  setphoto(photo) {
+  setPhoto(photo) {
     this.photo = photo;
   }
 
-  setdescription(description) {
+  setDescription(description) {
     this.description = description;
   }
   //submits this report and also uploads the photo associated with it

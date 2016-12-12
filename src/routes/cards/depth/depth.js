@@ -15,7 +15,7 @@ export class Depth {
       this.isMobile = false;
     }
     //Check previously available user inputs - from same session
-    var reportCardDepth = this.reportcard.getwaterdepth();
+    var reportCardDepth = this.reportcard.getWaterDepth();
     if (reportCardDepth) {
       this.depthVal = reportCardDepth;
     }
@@ -36,7 +36,7 @@ export class Depth {
     });
     var heightInCm = Math.round((fillHeight * imgHeightCm) / refHeightPx);
     that.depthVal = heightInCm;
-    that.reportcard.setwaterdepth(that.depthVal);
+    that.reportcard.setWaterDepth(that.depthVal);
     var sliderActive = false;
 
     //Touch start
@@ -65,7 +65,7 @@ export class Depth {
         heightInCm = Math.round(((fillHeight + startPos - dragPos) * imgHeightCm) / refHeightPx);
         if (sliderActive && heightInCm > 0 && heightInCm <= imgHeightCm) {
           that.depthVal = heightInCm;
-          that.reportcard.setwaterdepth(that.depthVal);
+          that.reportcard.setWaterDepth(that.depthVal);
           $('#floodZone').css({
             'height': (fillHeight + startPos - dragPos) + 'px'
           });

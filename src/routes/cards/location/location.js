@@ -12,7 +12,7 @@ var DEFAULT_MAP_CENTER = [-6.2, 106.83];
 export class Location {
   constructor(Reportcard) {
     this.reportcard = Reportcard;
-    var reportCardLocation = this.reportcard.getlocation();
+    var reportCardLocation = this.reportcard.getLocation();
     if (reportCardLocation) { //Check for available inputs, when user navigates back to location card
       this.inputs = reportCardLocation;
     } else {
@@ -87,14 +87,14 @@ export class Location {
         L.control.geoLocate({position: 'bottomright'}).addTo(cardMap);
         that.drawGpsMarkers(e.latlng, e.accuracy, cardMap);
         that.inputs = {markerLocation: e.latlng, gpsLocation: e.latlng, accuracy: e.accuracy};
-        that.reportcard.setlocation(that.inputs);
+        that.reportcard.setLocation(that.inputs);
       });
 
       //If geolocation unavailable, go to default city center;
       cardMap.on('locationerror', function () {
         cardMap.setView(DEFAULT_MAP_CENTER, 16);
         that.inputs.markerLocation = cardMap.getCenter();
-        that.reportcard.setlocation(that.inputs);
+        that.reportcard.setLocation(that.inputs);
       });
     }
 
@@ -102,7 +102,7 @@ export class Location {
     cardMap.on('moveend', function () {
       if (cardMap) {
         that.inputs.markerLocation = cardMap.getCenter();
-        that.reportcard.setlocation(that.inputs);
+        that.reportcard.setLocation(that.inputs);
       }
     });
   }

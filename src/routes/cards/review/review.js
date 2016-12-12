@@ -14,17 +14,17 @@ export class Review {
       this.isMobile = false;
     }
     //Check for available user inputs
-    var reportCardDepth = this.reportcard.getwaterdepth();
+    var reportCardDepth = this.reportcard.getWaterDepth();
     if (reportCardDepth) {
       this.selDepth = reportCardDepth + "cm";
     } else {
       this.selDepth = "Not selected";
     }
-    var reportCardPhoto = this.reportcard.getphoto();
+    var reportCardPhoto = this.reportcard.getPhoto();
     if (reportCardPhoto) {
       this.selPhoto = reportCardPhoto;
     }
-    var reportCardDescription = this.reportcard.getdescription();
+    var reportCardDescription = this.reportcard.getDescription();
     if (reportCardDescription) {
       this.selDescription = reportCardDescription;
     } else {
@@ -33,7 +33,7 @@ export class Review {
   }
 
   get checkRequiredInputs() { //TODO: Add checks for file / data types
-    if (this.reportcard.getlocation() && this.reportcard.getwaterdepth() && (this.reportcard.getphoto() || this.reportcard.getdescription())) {
+    if (this.reportcard.getLocation() && this.reportcard.getWaterDepth() && (this.reportcard.getPhoto() || this.reportcard.getDescription())) {
       return true;
     } else {
       return false;
@@ -92,15 +92,15 @@ export class Review {
             if (slideTranslate >= (slideThreshold * slideRange) && !swiped) {
               //Development test logs
               console.log('Report submitted with following values:');
-              console.log('Location: ' + that.reportcard.getlocation().markerLocation);
-              console.log('Water depth: ' + that.reportcard.getwaterdepth() + 'cm');
-              if (that.reportcard.getphoto()) {
-                console.log('Photo: ' + that.reportcard.getphoto()[0].name);
+              console.log('Location: ' + that.reportcard.getLocation().markerLocation);
+              console.log('Water depth: ' + that.reportcard.getWaterDepth() + 'cm');
+              if (that.reportcard.getPhoto()) {
+                console.log('Photo: ' + that.reportcard.getPhoto()[0].name);
               } else {
                 console.log('No photo provided');
               }
-              if (that.reportcard.getdescription()) {
-                console.log('Description: ' + that.reportcard.getdescription());
+              if (that.reportcard.getDescription()) {
+                console.log('Description: ' + that.reportcard.getDescription());
               } else {
                 console.log('No description provided');
               }

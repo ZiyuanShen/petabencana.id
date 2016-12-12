@@ -11,7 +11,7 @@ var degree = 90;
 export class Photo {
   constructor(Reportcard) {
     this.reportcard = Reportcard;
-    var reportCardPhoto = this.reportcard.getphoto();
+    var reportCardPhoto = this.reportcard.getPhoto();
     if (reportCardPhoto) {
       this.selectedPhoto = reportCardPhoto;
       this.haveImg = true;
@@ -34,7 +34,7 @@ export class Photo {
 
   drawImage(degree) {
     if (this.selectedPhoto[0]) {
-      this.reportcard.setphoto(this.selectedPhoto);
+      this.reportcard.setPhoto(this.selectedPhoto);
       wrapper.width = $('#canvas').width();
       wrapper.height = $('#canvas').height();
       let reader = new FileReader();
@@ -69,7 +69,7 @@ export class Photo {
   deletePhoto() {
     cntxt.translate(-wrapper.width / 2, -wrapper.height / 2);
     cntxt.clearRect(0, 0, wrapper.width, wrapper.height);
-    this.reportcard.setphoto(null);
+    this.reportcard.setPhoto(null);
     $('#rotateButton').prop("disabled", true);
     $('#deleteButton').prop("disabled", true);
   }
