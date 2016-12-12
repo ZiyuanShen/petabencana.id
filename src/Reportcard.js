@@ -17,6 +17,10 @@ export class Reportcard {
     this.description = null;
   }
 
+  getid() {
+    return this.id;
+  }
+
   getlocation() {
     return this.location;
   }
@@ -31,6 +35,10 @@ export class Reportcard {
 
   getdescription() {
     return this.description;
+  }
+
+  setid(id) {
+    this.id = id;
   }
 
   setlocation(location) {
@@ -52,13 +60,8 @@ export class Reportcard {
   //if there is one
   //returns a promise?
   submitReport(){
-    if (this.photo){
-      this.api.uploadPhoto(this.id, this.photo)
-        .then( function(url){
-          console.log("uploaded photo");
-      }).catch( msg => {
-        console.log("Could not upload photo");
-      });
+    if (this.location && this.water_depth) {
+      this.api.submitReport(this.id, this.location.markerLocation, this.water_depth, this.description, this.photo);
     }
   }
 }

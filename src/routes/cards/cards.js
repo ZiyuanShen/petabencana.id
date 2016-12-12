@@ -30,6 +30,7 @@ export class Cards {
   }
   activate(params) {
     this.id = params.id; //TODO: pass to webApi? to check against one-time-link
+    this.reportcard.setid(this.id);
   }
   attached() {
     $('#cardContent').css({
