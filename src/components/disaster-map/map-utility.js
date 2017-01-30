@@ -163,6 +163,25 @@ export class MapUtility {
     return container;
   }
 
+  // Add Reports control button element & style
+  addreportContainer(map, layers, togglePane) {
+    var self = this;
+    var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+    container.innerHTML = '<i class="icon-plus-circled"></i><span id="addreport"></span>';
+    container.style.fontSize = '16px';
+    container.style.textAlign = 'left';
+    container.style.lineHeight = '24px';
+    container.style.color = 'black';
+    container.style.backgroundColor = 'white';
+    container.style.height = '24px';
+    container.style.padding = '5px';
+    container.onclick = () => {
+      $('#openSidePane').trigger('click');
+      //self.viewClientLocation(map, layers, togglePane);
+    };
+    return container;
+  }
+
   attached() {
     var self = this;
 

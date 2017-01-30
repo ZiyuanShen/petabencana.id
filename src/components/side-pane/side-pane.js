@@ -14,6 +14,10 @@ export class SidePane {
   @bindable reportId;
   //end-non-standard
 
+  get currentLocaleAddReportText(){
+    return this.locale.addReportsButton;
+  }
+
   constructor() {
     this.tabList = ["map", "report", "info"]; //elements match names of fontello icons
     this.tab = "map";
@@ -63,6 +67,8 @@ export class SidePane {
       $.each(data, (key, val) => {
         this.locale[key] = val;
       });
+      //TODO this is a hack to change map content
+      $('#addreport').empty().append(this.currentLocaleAddReportText);
     });
   }
 

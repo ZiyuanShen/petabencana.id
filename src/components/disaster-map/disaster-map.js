@@ -168,6 +168,19 @@ export class DisasterMap {
       position: 'topleft'
     }).addTo(self.map);
 
+    // Add custom leaflet control to add reports
+    L.Control.AddReports = L.Control.extend({
+      onAdd: () => {
+        return self.utility.addreportContainer(self.map, self.layers, self.togglePane);
+      }
+    });
+    L.control.addReports = (opts) => {
+      return new L.Control.AddReports(opts);
+    };
+    L.control.addReports({
+      position: 'bottomleft'
+    }).addTo(self.map);
+
     // Find user location & store in background
     self.map.locate({
       setView: false

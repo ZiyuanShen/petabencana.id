@@ -27,7 +27,7 @@
           <img id="pbLogo" src="assets/graphics/Peta_logo_noSub.svg" width="180">
         </a>
       </div>
-      <div class="menuBtn active" click.delegate="mapModel.togglePane('#sidePane', 'show', true)">
+      <div class="menuBtn active" id="openSidePane" click.delegate="mapModel.togglePane('#sidePane', 'show', true)">
         <i class="icon-menu"></i>
       </div>
       <div class="menuBtn" id="closeSidePane" click.delegate="mapModel.togglePane('#sidePane', 'hide', false)">
@@ -35,10 +35,8 @@
       </div>
     </div>
 
+    <!--TODO not used, replaced with add reports button-->
     <div id="logo_bottom">
-      <a href="http://urbanrisklab.org">
-        <img id="mitLogo" src="assets/graphics/URL_logo.svg" width="180">
-      </a>
     </div>
 
     <div id="infoPane">
