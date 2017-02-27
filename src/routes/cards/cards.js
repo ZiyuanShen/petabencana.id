@@ -1,3 +1,10 @@
+/**
+ * @fileoverview Contains most of the logic code behind 
+ * cards. This includes routing, verification, and submission of reports 
+ * uses the EventAggregator to get events from views 
+ * @package
+ */
+
 import {inject} from 'aurelia-framework';
 import $ from 'jquery';
 import {EventAggregator} from 'aurelia-event-aggregator';
@@ -42,7 +49,12 @@ export class Cards {
     this.id = params.id;
   }
 
-  //switch on-the-fly
+  /**
+   * Switches languages on the fly 
+   * using json translation files defined in /locales 
+   * (off the root folder). 
+   * @param {string} arg language identifier that must be defined in /locales 
+   */
   switchLang(lang) {
     this.reportcard.changeLanguage(lang);
     $('.langLabels').removeClass("active");
@@ -59,6 +71,7 @@ export class Cards {
     });
   }
 
+  //called when the DOM element is ready 
   attached() {
     $('#depthBG').attr('fill', '#ff0000');
     var nua = navigator.userAgent.toLowerCase();
@@ -235,6 +248,7 @@ export class Cards {
       this.closeNotification();
     }
   }
+
   prevCard() {
     if (this.cardNo > 1) {
       this.count = -1;
@@ -249,6 +263,7 @@ export class Cards {
       return this.cardNo >= this.totalCards - 3;
     }
   }
+
   get prevDisabled() {
     return this.cardNo === 1 || this.cardNo === 7;
   }
