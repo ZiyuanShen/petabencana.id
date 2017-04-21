@@ -1,7 +1,8 @@
 describe('/cards/:id ', function() {
 
   beforeEach((done) => {
-    browser.loadAndWaitForAureliaPage('http://localhost:9000/cards/test123').then(() => {
+    var baseUrl = process.env.TESTING_URL || 'http://localhost:9000';
+    browser.loadAndWaitForAureliaPage(baseUrl +'/cards/test123').then(() => {
       done();
       return;
     });

@@ -1,8 +1,12 @@
 
 describe('Landing page', function() {
 
-  beforeEach(() => {
-    browser.loadAndWaitForAureliaPage('http://localhost:9000');
+  beforeEach((done) => {
+    var baseUrl = process.env.TESTING_URL || 'http://localhost:9000';
+    browser.loadAndWaitForAureliaPage(baseUrl +'/cards/test123').then(() => {
+      done();
+      return;
+    });
   });
   
   it('expect title to be correct', () => {
