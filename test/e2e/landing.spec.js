@@ -1,5 +1,8 @@
 
 describe('Landing page', function() {
+//  var delay = function() {
+//    browser.sleep(process.env.TEST_DELAY || 2000); 
+//  }; 
 
   beforeEach((done) => {
     var baseUrl = process.env.TESTING_URL || 'http://localhost:9000';
@@ -7,7 +10,7 @@ describe('Landing page', function() {
       done();
       return;
     });
-    browser.sleep(4000); 
+    browser.delay(); 
   });
   
   it('expect title to be correct', () => {
@@ -15,11 +18,12 @@ describe('Landing page', function() {
   });
 
   it('expect city choosing popup', () => {
+    browser.delay(); 
     let finder = element(by.id('cityPopup')); 
     finder.getText().then((text) => {
       expect(text).toContain("Select city"); 
       element(by.id('jakarta')).click();
-      browser.sleep(2000);
+      browser.delay(); 
       let url = browser.getCurrentUrl(); 
       expect(url).toContain("map/jakarta"); 
 

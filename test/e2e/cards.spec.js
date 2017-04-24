@@ -9,7 +9,7 @@ describe('/cards/:id ', function() {
   });
   
   it('expect title to be correct', () => {
-    browser.sleep(4000);
+    browser.delay();
     expect(browser.getTitle()).toContain('Flood reports');
   });
 
@@ -18,12 +18,12 @@ describe('/cards/:id ', function() {
     expect(browser.getCurrentUrl()).toContain('location');
     //let's click the previous button, nothing should happen!
     element(by.id('prv')).click();
-    browser.sleep(1000);
+    browser.delay();
     expect(browser.getCurrentUrl()).toContain('location');
 
     //now click the translate option
     element(by.id('id')).click();
-    browser.sleep(1000);
+    browser.delay();
     element(by.id('titleText')).getText().then((text)=> {
       expect(text).toBe('Pilih lokasi banjir');
     });
@@ -37,10 +37,10 @@ describe('/cards/:id ', function() {
     //notification, then we can click the next button and
     //appear to be in Jakarta/ default city.
     //we move the map by clicking the zoom in button:
-    browser.sleep(1000); //wait a second for the map to adjust
+    browser.delay();
     var map = element(by.className('leaflet-control-zoom-in'));
     map.click().then(() => {
-      browser.sleep(1000); //wait a second for the map to adjust
+      browser.delay();
       element(by.id('nxt')).click();
       //expects will wait for all previous acctions to finish before
       //resolving their promise, that's why we don't have to do
@@ -65,14 +65,14 @@ describe('/cards/:id ', function() {
       element(by.id('nxt')).click();
     };
 
-    browser.sleep(delay); //wait a second for the map to adjust
+    browser.delay(); //wait a second for the map to adjust
     var map = element(by.className('leaflet-control-zoom-in'));
     map.click().then(() => {
-      browser.sleep(delay); //wait a second for the map to adjust
+      browser.delay(); //wait a second for the map to adjust
       var i;
       for ( i=0; i < arrayOfCardNames.length-1; i++ ) {
         expectCard(i);
-        browser.sleep(delay);
+        browser.delay();
       }
     });
   };
