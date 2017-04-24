@@ -3,10 +3,11 @@ describe('Landing page', function() {
 
   beforeEach((done) => {
     var baseUrl = process.env.TESTING_URL || 'http://localhost:9000';
-    browser.loadAndWaitForAureliaPage(baseUrl +'/cards/test123').then(() => {
+    browser.loadAndWaitForAureliaPage(baseUrl +'/').then(() => {
       done();
       return;
     });
+    browser.sleep(4000); 
   });
   
   it('expect title to be correct', () => {
