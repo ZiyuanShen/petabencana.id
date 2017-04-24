@@ -1,4 +1,9 @@
-// An example configuration file.
+var set_delay = () => {
+  browser.delay = () => {
+    browser.sleep(process.env.TEST_DELAY || 2000);
+  };
+};
+
 exports.config = {
   //directConnect: true,
 
@@ -31,5 +36,7 @@ exports.config = {
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000
-  }
+  },
+
+  onPrepare: set_delay,
 };
