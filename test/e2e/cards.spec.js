@@ -9,7 +9,7 @@ describe('/cards/:id ', function() {
   });
   
   it('expect title to be correct', () => {
-    browser.sleep(1000);
+    browser.sleep(4000);
     expect(browser.getTitle()).toContain('Flood reports');
   });
 
