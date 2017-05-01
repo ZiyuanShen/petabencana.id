@@ -9,7 +9,7 @@
   "scripts": {
     "start": "au run --env dev --watch",
     "test": "au build && au test",
-    "e2e-dev-livesite": "protractor protractor_config/protractor.browserstack.android.conf.js",
+    "e2e-dev-livesite": "protractor protractor_config/protractor.browserstack.all.conf.js",
     "build": "rm -rf scripts/* && au build --env prod",
     "build-dev": "rm -rf scripts/* && au build --env dev"
   },

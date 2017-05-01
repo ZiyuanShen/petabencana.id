@@ -20,9 +20,9 @@ exports.config = {
   }, {
     'browserstack.user': process.env.BROWSERSTACK_USERNAME,
     'browserstack.key': process.env.BROWSERSTACK_KEY,
-    'browserName': 'android',
-    'platform': 'ANDROID',
-    'device': 'Samsung Galaxy S5',
+    'browserName': 'iPhone',
+    'platform': 'MAC',
+    'device': 'iPhone 6S',
     'browserstack.local': process.env.TEST_LOCAL || false,
   },
   
