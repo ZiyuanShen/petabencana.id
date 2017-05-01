@@ -1,5 +1,5 @@
 var set_delay = () => {
-  jasmine.DEFAULT_TIMEOUT_INTERVAL = process.env.TEST_DELAY || 2000; 
+  jasmine.DEFAULT_TIMEOUT_INTERVAL = (process.env.TEST_DELAY || 2000)*10; 
   browser.delay = () => {
     browser.sleep(process.env.TEST_DELAY || 2000);
   };
